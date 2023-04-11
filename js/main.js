@@ -8,7 +8,7 @@ document.body.appendChild( renderer.domElement );
 
 const geometry = new THREE.BoxGeometry( 4, 4, 4 );
 //const material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
-const texture = new THREE.TextureLoader().load('images/texture3.gif');
+const texture = new THREE.TextureLoader().load('images/native-design_agency-logo_native-white.svg');
 const material = new THREE.MeshBasicMaterial( { map: texture } );
 const cube = new THREE.Mesh( geometry, material );
 scene.add( cube );
