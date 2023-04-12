@@ -38,7 +38,7 @@ scene.add( directionalLight );
 const angle = window.innerWidth / window.innerHeight;
 const camera = new THREE.PerspectiveCamera(
 	 20, 
-	 angle, 
+	 window.innerWidth / window.innerHeight, 
 	 1, 
 	 100 );
 
