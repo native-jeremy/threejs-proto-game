@@ -1,13 +1,10 @@
 import * as THREE from 'three';
 
 const app = document.querySelector('#app');
-let camera, scene, renderer; // Three JS Globals
+
 const originalBoxSize = 3; // Original width and height of a box
 const colorParam = '#000000';
 
-init();
-
-function init() {
 
 // Scene 
 const scene = new THREE.Scene();
@@ -38,7 +35,7 @@ scene.add( directionalLight );
 const angle = window.innerWidth / window.innerHeight;
 const camera = new THREE.PerspectiveCamera(
 	 20, 
-	 window.innerWidth / window.innerHeight, 
+	 angle, 
 	 1, 
 	 100 );
 
@@ -50,6 +47,17 @@ const renderer = new THREE.WebGLRenderer( { antialias: true });
 renderer.setSize( window.innerWidth, window.innerHeight );
 renderer.render( scene, camera );
 app.append( renderer.domElement );
+
+window.addEventListener( 'resize', onWindowResize, false );
+
+function onWindowResize(){
+
+    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.updateProjectionMatrix();
+
+    renderer.setSize( window.innerWidth, window.innerHeight );
+
+}
 
 // Animate function
 function animate() {
@@ -63,16 +71,7 @@ function animate() {
 
 animate();
 
-};
+
 
 // Resizing the scene
-window.addEventListener( 'resize', onWindowResize, false );
-
-function onWindowResize(){
-
-    camera.aspect = window.innerWidth / window.innerHeight;
-    camera.updateProjectionMatrix();
-
-    renderer.setSize( window.innerWidth, window.innerHeight );
-};
 
