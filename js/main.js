@@ -13,6 +13,7 @@ app.append( renderer.domElement );
 const geometry = new THREE.BoxGeometry( 3, 2, 2 );
 //const material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
 const texture = new THREE.TextureLoader().load('images/native.jpg');
+texture.magFilter = THREE.NearestFilter;
 const material = new THREE.MeshBasicMaterial( { map: texture } );
 const cube = new THREE.Mesh( geometry, material );
 scene.add( cube );
