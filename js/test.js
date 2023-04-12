@@ -1,1 +1,0 @@
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.151.3/three.js" integrity="sha512-BwyZPvtawNInmLsREIDelsBWnyXzmR11MF6SG1VSkQ51YhMkdNFxL9sGKgRzTX7drQzCLVheb4sobHNGpwCn+w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
